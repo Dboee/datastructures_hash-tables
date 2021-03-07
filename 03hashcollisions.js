@@ -1,3 +1,11 @@
+let array = {
+    search: "O(n)",
+    lookup: "O(1)",
+    push: "O(1), mostly",
+    insert: "O(n)"
+}
+
+
 let hashtable = {
     insert: "O(1)",
     lookup: "O(1)",
@@ -16,6 +24,7 @@ let hashtable = {
     }
 }
 
+console.log(array)
 console.log(hashtable)
 
 

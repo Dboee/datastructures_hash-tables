@@ -37,7 +37,7 @@ class HashTable {
         let address = this._hash(key)
         const currentBucket = this.data[address]
         if (currentBucket){
-            console.group("We have a current bucket: " + currentBucket);
+            console.log("We have a current bucket: " + currentBucket);
             for(let i = 0; i < currentBucket.length; i++){
                 console.log("The loop is running: " + i);
                 if (currentBucket[i][0] === key){
@@ -45,11 +45,22 @@ class HashTable {
                     return currentBucket[i][1];
                 }
             }
-            console.groupEnd("We have a current bucket: " + currentBucket);
+            
         }
-        console.groupEnd(("GET: " + key));
         return undefined;
 
+    }
+
+    // Iterate trough the keys of the hashtable
+    keys = () => {
+        let keysArray = [];
+        for(let i = 0; i< this.data.length ; i++){
+            if(this.data[i]) {
+                keysArray.push(this.data[i][0][0])
+            }
+        }
+        console.log(keysArray);
+        return keysArray;
     }
 
 }
@@ -64,4 +75,10 @@ myHashTable.set("the fifth item", 500)
 myHashTable.set("the sixth item", 666)
 myHashTable.set("the seventh item", 700)
 myHashTable.get("the sixth item")
-console.log(myHashTable);
+console.groupEnd();
+console.group("KEYS: ")
+myHashTable.keys();
+console.groupEnd();
+
+
+console.group(myHashTable);
