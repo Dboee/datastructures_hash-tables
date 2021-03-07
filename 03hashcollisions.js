@@ -21,7 +21,9 @@ let hashtable = {
     sets: {
         createdBy: "let b = new Set()",
         stores: "Only stores keys, not key-value-pairs."
-    }
+    },
+    pros: [["Fast Lookups*", "*good collision resolution needed"], "Fast inserts", "Flexible Keys", "Good for improving time complexity"],
+    cons: ["Unordered", "Slow key iteration"]
 }
 
 console.log(array)
